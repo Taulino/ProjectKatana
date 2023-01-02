@@ -12,6 +12,7 @@ public class StateMachin
    
     public void ChangeState(State newState)
     {
+        if (newState.GetType() == CurrentState.GetType()) return;
         CurrentState.Exit();
         CurrentState = newState;//присвоєння нового стану 
         CurrentState.Enter();
